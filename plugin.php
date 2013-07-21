@@ -8,9 +8,9 @@
  * Author URI: http://giustino.borzacchiello.it
  *
  */
-add_action('admin_bar_menu', 'yit_admin_bar_menu', 1001);
+add_action('admin_bar_menu', 'yit_debug_bar_menu', 1001);
 
-function yit_admin_bar_menu($wp_admin_bar)
+function yit_debug_bar_menu($wp_admin_bar)
 {
     /**
      * @var $wp_admin_bar WP_Admin_Bar
@@ -54,9 +54,9 @@ function yit_debug_bar_ajaxurl()
 <?php
 }
 
-add_action('admin_enqueue_scripts', 'register_admin_scripts');
-add_action('wp_enqueue_scripts', 'register_admin_scripts');
-function register_admin_scripts()
+add_action('admin_enqueue_scripts', 'yit_debug_bar_register_script');
+add_action('wp_enqueue_scripts', 'yit_debug_bar_register_script');
+function yit_debug_bar_register_script()
 {
     wp_enqueue_script('yitdebug_admin_js', plugins_url('yit-debug-bar/admin.js'));
 }
