@@ -1,9 +1,8 @@
 /**
- * Created with JetBrains PhpStorm.
- * User: Just
+ * YIT debug bar
+ * User: Giustino Borzacchiello - giustinob[at]gmail[dot]com
  * Date: 20/07/13
  * Time: 0.12
- * To change this template use File | Settings | File Templates.
  */
 jQuery(document).ready(function ($) {
     "use strict";
