@@ -8,6 +8,10 @@
  * Author URI: http://giustino.borzacchiello.it
  *
  */
+if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
+
+load_plugin_textdomain( 'yit-debug-bar', false, dirname( plugin_basename( __FILE__ ) ). '/languages/' );
+
 add_action('admin_bar_menu', 'yit_debug_bar_menu', 1001);
 
 function yit_debug_bar_menu($wp_admin_bar)
@@ -58,5 +62,5 @@ add_action('admin_enqueue_scripts', 'yit_debug_bar_register_script');
 add_action('wp_enqueue_scripts', 'yit_debug_bar_register_script');
 function yit_debug_bar_register_script()
 {
-    wp_enqueue_script('yitdebug_admin_js', plugins_url('yit-debug-bar/admin.js'));
+    wp_enqueue_script('yitdebug_admin_js', plugins_url('yit-debug-bar/js/admin.js'));
 }
