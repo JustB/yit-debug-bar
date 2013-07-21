@@ -36,4 +36,19 @@ jQuery(document).ready(function ($) {
         });
     });
 
+    $('#wp-admin-bar-yit-delete-resize-images > a').click(function (e) {
+        e.preventDefault();
+
+        var data = {
+            action: 'delete_resized_images'
+        };
+
+        console.log('Deleting resized images...');
+
+        $.post(ajaxurl, data, function () {
+            console.log('Successfully deleted resized images');
+        });
+    });
+
+
 });

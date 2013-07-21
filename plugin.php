@@ -35,6 +35,13 @@ function yit_admin_bar_menu($wp_admin_bar)
         'title' => apply_filters('yit_debug_bar_reset_theme_options', __('Reset Theme Options', 'yit-debug-bar')),
         'href' => '#',
     ));
+
+    $wp_admin_bar->add_menu(array(
+        'parent' => 'yit-debug-bar',
+        'id' => 'yit-delete-resize-images',
+        'title' => apply_filters('yit_debug_bar_delete_resize_image', __('Delete resized images', 'yit-debug-bar')),
+        'href' => '#',
+    ));
 }
 
 add_action('wp_head', 'yit_debug_bar_ajaxurl', 0);
