@@ -24,6 +24,13 @@ function yit_admin_bar_menu($wp_admin_bar)
 
     $wp_admin_bar->add_menu(array(
         'parent' => 'yit-debug-bar',
+        'id' => 'yit-delete-cache',
+        'title' => apply_filters('yit_debug_bar_delete_cache', __('Delete cache', 'yit-debug-bar')),
+        'href' => '#',
+    ));
+
+    $wp_admin_bar->add_menu(array(
+        'parent' => 'yit-debug-bar',
         'id' => 'yit-reset-theme-options',
         'title' => apply_filters('yit_debug_bar_reset_theme_options', __('Reset Theme Options', 'yit-debug-bar')),
         'href' => '#',

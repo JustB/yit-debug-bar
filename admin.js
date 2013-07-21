@@ -5,30 +5,35 @@
  * Time: 0.12
  * To change this template use File | Settings | File Templates.
  */
-jQuery( document ).ready( function( $ ) {
-
-    $( '#wp-admin-bar-yit-reset-theme-options > a' ).click( function( e ) {
+jQuery(document).ready(function ($) {
+    "use strict";
+    $('#wp-admin-bar-yit-reset-theme-options > a').click(function (e) {
         e.preventDefault();
-        $('#add-items-ajax-loading-2').css('visibility', 'visible');
 
         var data = {
-            action : 'reset_theme_options'
+            action: 'reset_theme_options'
         };
 
-        console.log( 'Deleting theme options...' );
+        console.log('Deleting theme options...');
 
-        $.post( ajaxurl, data, function( response ) {
-            $('#add-items-ajax-loading-2').hide();
-            $( 'body' ).append( response );
-            $( '.messages-global').css( {
-                'position' : 'fixed',
-                'top' : '50%',
-                'left': '37%',
-                'z-index' : '9999',
-                'padding' : '30px'
-            } );
+        $.post(ajaxurl, data, function () {
+            console.log('Successfully reset Theme Options');
+        });
+    });
 
-            $( '.messages-global' ).fadeIn().delay( 3000 ).fadeOut();
-        } );
-    } );
-} );
+    $('#wp-admin-bar-yit-delete-cache > a').click(function (e) {
+        e.preventDefault();
+
+        var data = {
+            action: 'delete_cache',
+            die: 1
+        };
+
+        console.log('Deleting cache...');
+
+        $.post(ajaxurl, data, function () {
+            console.log('Successfully deleted cache');
+        });
+    });
+
+});
