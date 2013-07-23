@@ -10,6 +10,8 @@
  */
 if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
 
+if(!IS_YITH) { exit; } // Exit if we are not using an yith theme
+
 load_plugin_textdomain( 'yit-debug-bar', false, dirname( plugin_basename( __FILE__ ) ). '/languages/' );
 
 add_action('admin_bar_menu', 'yit_debug_bar_menu', 1001);
